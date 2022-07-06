@@ -9,3 +9,7 @@ and is meant only to provide a way to synthesize speech in rust (that works well
 
 This is not one of my high-effort projects, and if you would like to see more features implemented,
 feel free to ask in the [repo](https://github.com/rowan-sl/coqui-rs/tree/main)
+
+## Python dependanices
+
+this depends on the `TTS` package, (currently supports 0.7.1). it is recommended to install it in a python virtual environment such as `venv`
