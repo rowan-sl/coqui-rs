@@ -1,6 +1,6 @@
 [workspace]
 members = [
     "coqui-tts",
-    "coqui-stt"
+    "tts-testing",
 ]
 resolver = "2"

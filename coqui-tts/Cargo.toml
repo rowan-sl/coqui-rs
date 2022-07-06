@@ -1,6 +1,6 @@
 [package]
 name = "coqui-tts"
-version = "0.0.0"
+version = "0.1.0"
 edition = "2021"
 license = "MIT OR Apache-2.0"
 authors = ["Rowan S-L <r@fawkes.io>"]
@@ -10,9 +10,13 @@ repository = "https://github.com/rowan-sl/coqui-rs/tree/main"
 readme = "README.md"
 publish = true
 keywords = ["text-to-speech", "TTS", "coqui-ai"]
-catagories = ["science", "api-bindings"]
+categories = ["science", "api-bindings"]
 
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+
+[dependencies.pyo3]
+version = "0.16.5"
+features = ["auto-initialize"]
