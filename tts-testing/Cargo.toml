@@ -6,10 +6,11 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-rodio = "0.15.0"
+rodio = "0.17.1"
+wav = "1.0.0"
 
 [dependencies.pyo3]
-version = "0.16.5"
+version = "0.18.2"
 features = ["auto-initialize"]
 
 [dependencies.coqui-tts]

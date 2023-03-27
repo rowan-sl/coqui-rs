@@ -24,10 +24,12 @@ impl Synthesizer {
     /// this may spew out some text to stdout about initialization,
     /// this is from the python library and there is nothing that can be done about it
     ///
-    pub fn new(model: &str) -> Self {
+    pub fn new(model: &str, use_cuda: bool) -> Self {
         Python::with_gil(|py| {
             let locals: Py<PyDict> = PyDict::new(py).into();
-            locals.as_ref(py).borrow().setattr("model_name", model).unwrap();
+            let locals_ref = locals.as_ref(py).borrow();
+            locals_ref.set_item("model_name", model).unwrap();
+            locals_ref.set_item("use_cuda", use_cuda).unwrap();
             py.run(r#"
 from TTS.utils.synthesizer import Synthesizer
 from TTS.utils.manage import ModelManager
@@ -49,7 +51,7 @@ coqui_tts = Synthesizer(
     config_path,
     vocoder_checkpoint=vocoder_path,
     vocoder_config=vocoder_config_path,
-    use_cuda=False
+    use_cuda=use_cuda
 )
             "#, None, Some(locals.as_ref(py).borrow())).unwrap();
             Self { locals }

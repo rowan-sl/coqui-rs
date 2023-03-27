@@ -12,4 +12,4 @@ feel free to ask in the [repo](https://github.com/rowan-sl/coqui-rs/tree/main)
 
 ## Python dependanices
 
-this depends on the `TTS` package, (currently supports 0.7.1). it is recommended to install it in a python virtual environment such as `venv`
+this depends on the `TTS` package, (tested to work with up to v0.12.0). it is recommended to install it in a python virtual environment such as `venv`
